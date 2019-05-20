@@ -5,67 +5,94 @@
 
     <div class="gb-container">
       <p>Instantly send an e-gift card to be redeemed on Goldbelly.com. Valid online only.</p>
-      <btn>test</btn>
+
+      <gift-card></gift-card>
+
+      <form>
+        <form-input name="recipientName" type="text">Recipient Name</form-input>
+        <form-input name="recipientEmail" type="email" placeholder="food.explorer@goldbelly.com">Recipient Email</form-input>
+
+        <br />
+
+        <form-input name="senderName" type="text">Sender Name</form-input>
+        <form-input name="senderEmail" type="email" placeholder="food.explorer@goldbelly.com">Sender Email</form-input>
+
+        <br />
+
+        <form-input name="giftMessage" type="textarea">Gift Message</form-input>
+      </form>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from './components/Logo.vue'
-import Btn from './components/Btn.vue'
+  import Logo from './components/Logo.vue'
+  import GiftCard from './components/GiftCard.vue'
+  import Btn from './components/Btn.vue'
+  import FormInput from './components/inputs/FormInput.vue'
 
-export default {
-  name: 'app',
-  components: {
-    Logo,
-    Btn
+  export default {
+    name: 'app',
+    components: {
+      Logo,
+      GiftCard,
+      Btn,
+      FormInput
+    }
   }
-}
 </script>
-
 
 <style>
   @import url("https://fonts.googleapis.com/icon?family=Cabin");
   @import url("~normalize.css");
 
   :root {
-    --color-red: #FF4D4F;
-    --color-blue: #1BAAD0;
-    --color-beige: #F2EEE9;
-    --color-beige-dark: #D2CAB6;
-    --color-gray: #333333;
-    --color-white: #ffffff;
-
+    --color-red: #ff4d4f;
+    --color-blue: #1baad0;
+    --color-beige: #f2eee9;
+    --color-beige-dark: #d2cab6;
+    --color-gray: #333;
+    --color-white: #fff;
     --font-family-cabin: "Cabin", sans-serif;
     --font-family-futura: "Futura", sans-serif;
   }
 
   body {
-    background-color: var(--color-beige);
+    padding: 2rem 0;
+    color: var(--color-gray);
     font-family: var(--font-family-cabin);
     text-align: center;
-    padding: 2rem 0;
-    font-size: 16px;
+    background-color: var(--color-beige);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .gb-container {
-    background-color: var(--color-white);
+    display: block;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
     max-width: 40rem;
     margin: 1rem auto;
-    padding: 0.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    background-color: var(--color-white);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  form {
+    grid-column: 2 / 2;
   }
 
   .gb-logo {
+    width: 20%;
+    min-width: 10rem;
     margin: 1rem 0;
-    width: 25%;
   }
 
   .gb-tagline {
-    font-size: 1rem;
     margin: 0.5rem 0 2rem 0;
     color: var(--color-gray);
-    text-transform: uppercase;
+    font-size: 0.9rem;
     font-family: var(--font-family-futura);
+    text-transform: uppercase;
   }
 </style>

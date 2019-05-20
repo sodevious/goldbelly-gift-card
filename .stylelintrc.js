@@ -3,7 +3,7 @@ module.exports = {
   "extends": "stylelint-config-rational-order",
   "rules": {
     "indentation": "tab",
-    "unit-blacklist": ["px"],
+    // "unit-blacklist": ["px"],
     "indentation": 2,
     "no-duplicate-selectors": true,
     "selector-no-qualifying-type": true,
