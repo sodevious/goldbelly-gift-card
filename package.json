@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:style": "vue-cli-service lint:style"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -13,17 +14,21 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-plugin-eslint": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
     "eslint-plugin-vue": "^5.0.0",
-    "google-fonts-webpack-plugin": "^0.4.4",
     "normalize.css": "^8.0.1",
     "sass": "^1.20.1",
     "sass-loader": "^7.1.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^3.0.0",
     "vue-template-compiler": "^2.5.21"
   }
-
 }
