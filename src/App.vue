@@ -71,7 +71,7 @@
     display: block;
     grid-template-rows: auto;
     grid-template-columns: 50% 50%;
-    max-width: 40rem;
+    max-width: 30rem;
     margin: 1rem auto;
     padding: 1rem;
     background-color: var(--color-white);
