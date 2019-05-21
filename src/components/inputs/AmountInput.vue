@@ -15,6 +15,10 @@
         {{ amount }}
       </li>
     </ul>
+
+    <div class="gb-giftcard-autocomplete-error" v-show="value < 25 || value > 500">
+      Please enter a dollar amount between $1 and $500.
+    </div>
   </div>
 </template>
 
@@ -25,7 +29,7 @@
       return {
         value: '100',
         amounts: ['25', '50', '100', '200'],
-        isOpen: false,
+        isOpen: false
       };
     },
     methods: {
@@ -40,7 +44,7 @@
       setAmount(amount) {
         this.value = amount;
         this.isOpen = false;
-      },
+      }
     },
     mounted() {
       document.addEventListener('click', this.handleOffClick)
@@ -86,6 +90,7 @@
   border-radius: 0.25rem;
   outline: none;
   cursor: pointer;
+  transition: 0.25s ease-in all;
 }
 
 .gb-giftcard-input:hover,
@@ -117,5 +122,14 @@
 
 .gb-giftcard-result-item:hover {
   background-color: var(--color-beige);
+}
+
+.gb-giftcard-autocomplete-error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: var(--color-red);
 }
 </style>

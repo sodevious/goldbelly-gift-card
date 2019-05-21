@@ -6,7 +6,7 @@
 
     <textarea v-if="type === 'textarea'"
               class="gb-form-input"
-              rows="3"
+              rows="2"
               :id="name"
               :placeholder="placeholder"></textarea>
 
@@ -40,7 +40,6 @@
     margin-right: 1rem;
     padding-top: 0.5rem;
     color: var(--color-red);
-    font-size: 1.05rem;
     font-family: var(--font-family-futura);
     text-align: left;
   }
