@@ -63,7 +63,7 @@
   --font-family-cabin: "Cabin", sans-serif;
   --font-family-futura: "Futura", sans-serif;
 
-  --breakpoint-tablet: 40rem;
+  --breakpoint-tablet: 36rem;
 }
 
 body {
