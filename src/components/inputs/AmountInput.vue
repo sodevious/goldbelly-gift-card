@@ -1,7 +1,7 @@
 <template>
   <div class="gb-giftcard-autocomplete">
     <input v-model="value"
-           v-on:click="handleDropdown"
+           v-on:click="toggleDropdown"
            v-on:input="isOpen == false"
            type="number"
            max="500"
@@ -33,8 +33,8 @@
       };
     },
     methods: {
-      handleDropdown() {
-        this.isOpen = true;
+      toggleDropdown() {
+        this.isOpen = !this.isOpen;
       },
       handleOffClick(event) {
         if (!this.$el.contains(event.target)) {
@@ -55,12 +55,13 @@
   }
 </script>
 
-<style>
+<style lang="scss">
 .gb-giftcard-autocomplete {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
   width: 50%;
+  min-width: 8rem;
 }
 
 .gb-giftcard-autocomplete:after {
@@ -91,12 +92,13 @@
   outline: none;
   cursor: pointer;
   transition: 0.25s ease-in all;
-}
 
-.gb-giftcard-input:hover,
-.gb-giftcard-input:focus {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-beige-dark);
+  &:hover,
+  &:focus {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-blue);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  }
 }
 
 .gb-giftcard-results {
@@ -104,12 +106,14 @@
   z-index: 5;
   box-sizing: border-box;
   width: 100%;
-  margin-top: -2px;
+  margin-top: -3px;
   padding: 0;
   background-color: var(--color-white);
-  border-right: 1px solid var(--color-beige-dark);
-  border-bottom: 1px solid var(--color-beige-dark);
-  border-left: 1px solid var(--color-beige-dark);
+  border-right: 1px solid var(--color-blue);
+  border-bottom: 1px solid var(--color-blue);
+  border-left: 1px solid var(--color-blue);
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 
 .gb-giftcard-result-item {
@@ -118,17 +122,22 @@
   padding: 1rem;
   list-style-type: none;
   cursor: pointer;
-}
 
-.gb-giftcard-result-item:hover {
-  background-color: var(--color-beige);
+  &:hover {
+    background-color: var(--color-beige);
+  }
+
+  &:last-child {
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
 }
 
 .gb-giftcard-autocomplete-error {
   position: fixed;
   top: 0;
+  right: 0;
   left: 0;
-  width: 100%;
   padding: 1rem;
   background: var(--color-red);
 }

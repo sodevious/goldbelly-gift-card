@@ -27,7 +27,6 @@
 .gb-giftcard {
   display: flex;
   flex-flow: column;
-  grid-column: 1 / 1;
   align-items: center;
   justify-content: center;
   width: 80%;

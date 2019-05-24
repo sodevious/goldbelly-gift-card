@@ -30,26 +30,36 @@
   }
 </script>
 
-<style>
-  .gb-form-row {
+<style lang="scss">
+.gb-form-row {
+  margin-bottom: 1.5rem;
+
+  @media screen and (min-width: 40rem) {
     display: flex;
   }
+}
 
-  .gb-form-label {
-    flex-basis: 30%;
-    margin-right: 1rem;
-    padding-top: 0.5rem;
-    color: var(--color-red);
-    font-family: var(--font-family-futura);
-    text-align: left;
-  }
+.gb-form-label {
+  display: block;
+  flex-basis: 25%;
+  margin-right: 1.5rem;
+  padding-top: 0.5rem;
+  color: var(--color-red);
+  font-family: var(--font-family-futura);
+  text-align: left;
 
-  .gb-form-input {
-    flex: 1;
-    padding: 0.5rem;
-    font-size: 1.05rem;
-    font-family: var(--font-family-futura);
-    border: 0;
-    border-bottom: 1px dotted var(--color-beige-dark);
+  @media screen and (min-width: 40rem) {
+    text-align: right;
   }
+}
+
+.gb-form-input {
+  flex: 1;
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 1.05rem;
+  font-family: var(--font-family-futura);
+  border: 0;
+  border-bottom: 1px dotted var(--color-beige-dark);
+}
 </style>

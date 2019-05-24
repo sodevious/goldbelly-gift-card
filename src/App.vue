@@ -9,9 +9,9 @@
       <gift-card :swapCard="hideForm"></gift-card>
 
       <form class="gb-form">
-        <form-input name="recipientName" type="text">Recipient Name</form-input>
+        <form-input name="recipientName" type="text" placeholder="Food Explorer">Recipient Name</form-input>
         <form-input name="recipientEmail" type="email" placeholder="food.explorer@goldbelly.com">Recipient Email</form-input>
-        <form-input name="senderName" type="text">Sender Name</form-input>
+        <form-input name="senderName" type="text" placeholder="Best Friend of the Year">Sender Name</form-input>
         <form-input name="senderEmail" type="email" placeholder="food.explorer@goldbelly.com">Sender Email</form-input>
         <form-input name="giftMessage" type="textarea">Gift Message</form-input>
 
@@ -59,12 +59,15 @@
   --color-beige-dark: #d2cab6;
   --color-gray: #333;
   --color-white: #fff;
+
   --font-family-cabin: "Cabin", sans-serif;
   --font-family-futura: "Futura", sans-serif;
+
+  --breakpoint-tablet: 40rem;
 }
 
 body {
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   color: var(--color-gray);
   font-family: var(--font-family-cabin);
   text-align: center;
@@ -73,11 +76,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  line-height: 1.25;
+}
+
 .gb-container {
   display: block;
-  grid-template-rows: auto;
-  grid-template-columns: 50% 50%;
-  max-width: 30rem;
+  max-width: var(--breakpoint-tablet);
   margin: 1rem auto;
   padding: 1rem;
   background-color: var(--color-white);
@@ -87,7 +92,7 @@ body {
 
 .gb-logo {
   width: 20%;
-  min-width: 10rem;
+  min-width: 12rem;
   margin: 1rem 0;
 }
 
@@ -102,7 +107,6 @@ body {
 // Form
 
 .gb-form {
-  grid-column: 2 / 2;
   padding: 1rem;
 }
 

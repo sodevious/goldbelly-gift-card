@@ -8,7 +8,7 @@ Notes:
 
 * This assumes you have Futura installed locally. In an ideal/production situation, I'd self host Cabin and Futura (with proper licenses) and serve asyncronously them as custom web fonts (`@font-face`)
 
-* Amount input would need better validation in a production enviroment.
+* Amount input would need better validation in a production environment.
 
 
 # Vue CLI Setup
